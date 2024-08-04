@@ -24,7 +24,7 @@ app.post("/tasks", userController.verifyToken, taskController.createTask);
 app.put("/tasks/:id", userController.verifyToken, taskController.updateTask);
 app.delete("/tasks/:id", userController.verifyToken, taskController.deleteTask);
 
-const port = process.env.PORT;
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
